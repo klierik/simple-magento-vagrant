@@ -58,7 +58,7 @@ I prefere use different folders for vagrant and progect. For example:
 simple-magento-vagrant    - my project folder
 vagrant                   - vagrant folder
 ```
-That\`s why i sync my folders in this way `config.vm.synced_folder "../simple-magento-vagrant/", "/vagrant/httpdocs"`. Change `../simple-magento-vagrant/` to folder with your progect.
+That\`s why i sync my folders in this way `config.vm.synced_folder "../magento-project-folder/", "/vagrant/httpdocs"`. Change `../magento-project-folder/` path to folder with your project (it\` can be relative or absolute url).
 
 __Run Vagrant__
 

@@ -1,43 +1,71 @@
-This is ultra light Vagrant box for running Magento CMS from box.
+# What is that? #
+Simple-Magento-Vagrant -- ultra light Vagrant box for running Magento CMS from box, based on Ubuntu precise 64.
 
-Based on Ubuntu precise 64.
+## Requirements: ##
++ [Vagrant](http://www.vagrantup.com/downloads.html)
++ [Vagrant Host Manager](https://github.com/smdahlen/vagrant-hostmanager)
++ [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 
-Requirements:
-+ Vagrant Host Manager (https://github.com/smdahlen/vagrant-hostmanager)
+## Default configuration ##
 
-Default configuration.
-
-File system:
+__File system:__
+```
 nfs: true
 mount_options: ["nolock", "async"]
 bsd__nfs_options: ["alldirs","async","nolock"]
 config.nfs.map_uid = 0
 config.nfs.map_gid = 0
+```
 
-VirtualBox settings:
-Memory by defauylt: vb.customize ["modifyvm", :id, "--memory", "512"]
-Network host-guest configuration: config.vm.network :forwarded_port, guest: 80, host: 8999
+__VirtualBox settings:__
 
-Magento configuration.
+Memory by default: `vb.customize ["modifyvm", :id, "--memory", "512"]`  
+Network host-guest configuration: `config.vm.network :forwarded_port, guest: 80, host: 8999`
 
-Magento version include: 1.8.1.0
-DataBase name: magentodb
-DataBase user name: magentouser
-DataBase user password: password
+## Magento configuration ##
+Magento version include: __1.8.1.0__  
+Magento sample data include: __1.6.1.0__
 
-Magento sample data inckude: 1.6.1.0
+DB name: __magentodb__  
+DB user name: __magentouser__  
+DB user password: __password__  
 
-Web server configuration.
+## Web server configuration ##
 
-Server name: simple-magento-vagrant.dev
+Server name: __simple-magento-vagrant.dev__
 
-How to use and/or customize.
-# Change domain name
-1. Open Vagrantfile and use find/replace tool to change "simple-magento-vagrant" ==> "my-personal-magento-site-name" or something like that
-2. Open bootstrap.sh and use find/replace tool to change "simple-magento-vagrant" ==> "my-personal-magento-site-name" or something like that
+## How to use and/or customize. ##
+__Change domain name__
 
-# Change network private ip
+1. Open Vagrantfile and use find/replace tool to change `"simple-magento-vagrant"` ==> `"my-personal-magento-site-name"` or what you need
+2. Open bootstrap.sh and use find/replace tool to change `"simple-magento-vagrant"` ==> `"my-personal-magento-site-name"` or what you need
+
+__Change network private ip__
+
 Open Vagrant file and find `node.vm.network :private_network, ip: '192.168.68.69'` ==> change ip
 
-# Change forwarded port
-Opan Vagrantvile and find `config.vm.network :forwarded_port, guest: 80, host: 8999` ==> change host port
+__Change forwarded port__
+
+Open Vagrantvile and find `config.vm.network :forwarded_port, guest: 80, host: 8999` ==> change host port
+
+__Change Synced folder__
+
+I prefere use different folders for vagrant and progect. For example:
+
+```
+.
+..
+simple-magento-vagrant    - my project folder
+vagrant                   - vagrant folder
+```
+That\`s why i sync my folders in this way `config.vm.synced_folder "../simple-magento-vagrant/", "/vagrant/httpdocs"`. Change `../simple-magento-vagrant/` to folder with your progect.
+
+__Run Vagrant__
+
+Run `$ vagrant up` in your vagrant options.
+
+__PS: via installation you can be asked for password__
+
+Now open http://simple-magento-vagrant.dev/ in your browser and install magento.
+
+Tested on Mac Os X 10.9

@@ -41,8 +41,11 @@ Server name: __simple-magento-vagrant.dev__
 ## How to use and/or customize. ##
 __Change domain name__
 
-1. Open Vagrantfile and use find/replace tool to change `"simple-magento-vagrant"` ==> `"my-personal-magento-site-name"` or what you need
-2. Open bootstrap.sh and use find/replace tool to change `"simple-magento-vagrant"` ==> `"my-personal-magento-site-name"` or what you need
+1. Open Vagrantfile and use find/replace tool to change  
+`"simple-magento-vagrant"` ==> `"my-personal-magento-site-name"` or what you need
+
+2. Open bootstrap.sh and use find/replace tool to change  
+`"simple-magento-vagrant"` ==> `"my-personal-magento-site-name"` or what you need
 
 __Change network private ip__
 
@@ -59,10 +62,11 @@ I prefere use different folders for vagrant and progect. For example:
 ```
 .
 ..
-simple-magento-vagrant    - my project folder
+magento-project-folder    - my project folder
 vagrant                   - vagrant folder
 ```
-That\`s why i sync my folders in this way `config.vm.synced_folder "../magento-project-folder/", "/vagrant/httpdocs"`. Change `../magento-project-folder/` path to folder with your project (it\` can be relative or absolute url).
+That\`s why i sync my folders in this way `config.vm.synced_folder "../magento-project-folder/", "/vagrant/httpdocs"`.  
+Change `../magento-project-folder/` path to folder with your project (it\` can be relative or absolute url).
 
 __Run Vagrant__
 

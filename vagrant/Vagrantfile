@@ -2,52 +2,52 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  # All Vagrant configuration is done here. The most common configuration
-  # options are documented and commented below. For a complete reference,
-  # please see the online documentation at vagrantup.com.
+    # All Vagrant configuration is done here. The most common configuration
+    # options are documented and commented below. For a complete reference,
+    # please see the online documentation at vagrantup.com.
 
-  # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "precise64"
-  # config.vm.box = "precise32"
+    # Every Vagrant virtual environment requires a box to build off of.
+    config.vm.box = "precise64"
+    # config.vm.box = "precise32"
 
-  # The url from where the 'config.vm.box' box will be fetched if it
-  # doesn't already exist on the user's system.
-  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
-  # config.vm.box_url = "http://files.vagrantup.com/precise32.box"
+    # The url from where the 'config.vm.box' box will be fetched if it
+    # doesn't already exist on the user's system.
+    config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+    # config.vm.box_url = "http://files.vagrantup.com/precise32.box"
 
-  config.vm.provision :shell, :path => "bootstrap.sh"
+    config.vm.provision :shell, :path => "bootstrap.sh"
 
-  # Create a forwarded port mapping which allows access to a specific port
-  # within the machine from a port on the host machine. In the example below,
-  # accessing "localhost:8080" will access port 80 on the guest machine.
-  config.vm.network :forwarded_port, guest: 80, host: 8998
-
-
-  # Synced folder
-  # config.vm.synced_folder "../magento-project-folder/", "/vagrant/httpdocs"
-  config.vm.synced_folder "../magento-project-folder/", "/vagrant/httpdocs", nfs: true, mount_options: ["nolock", "async"], bsd__nfs_options: ["alldirs","async","nolock"]
-  config.nfs.map_uid = 0
-  config.nfs.map_gid = 0
+    # Create a forwarded port mapping which allows access to a specific port
+    # within the machine from a port on the host machine. In the example below,
+    # accessing "localhost:8080" will access port 80 on the guest machine.
+    config.vm.network :forwarded_port, guest: 80, host: 8998
 
 
-  # VirtualBox settings
-  config.vm.provider :virtualbox do |vb|
-    vb.customize ["modifyvm", :id, "--memory", "512"]
-    # vb.customize ["modifyvm", :id, "--memory", "1024"]
-    # vb.customize ["modifyvm", :id, "--memory", "2048"]
-    # vb.customize ["modifyvm", :id, "--memory", "3072"]
-    # vb.customize ["modifyvm", :id, "--memory", "4096"]
-  end
+    # Synced folder
+    # config.vm.synced_folder "../magento-project-folder/", "/vagrant/httpdocs"
+    config.vm.synced_folder "../magento-project-folder/", "/vagrant/httpdocs", nfs: true, mount_options: ["nolock", "async"], bsd__nfs_options: ["alldirs","async","nolock"]
+    config.nfs.map_uid = 0
+    config.nfs.map_gid = 0
 
 
-  # Host Manager
-  config.hostmanager.enabled = true
-  config.hostmanager.manage_host = true
-  config.hostmanager.ignore_private_ip = false
-  config.hostmanager.include_offline = true
-  config.vm.define 'simple-magento-vagrant' do |node|
-    node.vm.hostname = 'simple-magento-vagrant'
-    node.vm.network :private_network, ip: '192.168.68.69'
-    node.hostmanager.aliases = %w(simple-magento-vagrant.dev)
-  end
+    # VirtualBox settings
+    config.vm.provider :virtualbox do |vb|
+        vb.customize ["modifyvm", :id, "--memory", "512"]
+        # vb.customize ["modifyvm", :id, "--memory", "1024"]
+        # vb.customize ["modifyvm", :id, "--memory", "2048"]
+        # vb.customize ["modifyvm", :id, "--memory", "3072"]
+        # vb.customize ["modifyvm", :id, "--memory", "4096"]
+    end
+
+
+    # Host Manager
+    config.hostmanager.enabled = true
+    config.hostmanager.manage_host = true
+    config.hostmanager.ignore_private_ip = false
+    config.hostmanager.include_offline = true
+    config.vm.define 'simple-magento-vagrant' do |node|
+        node.vm.hostname = 'simple-magento-vagrant'
+        node.vm.network :private_network, ip: '192.168.68.69'
+        node.hostmanager.aliases = %w(simple-magento-vagrant.dev)
+    end
 end

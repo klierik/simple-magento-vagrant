@@ -89,6 +89,6 @@ Run `$ vagrant up` in your vagrant options.
 
 __PS: via installation you can be asked for password__
 
-Now open http://simple-magento-vagrant.dev/ in your browser and install magento.
+After installation is finished open http://simple-magento-vagrant.dev/ in your browser and install Magento.
 
 Tested on Mac Os X 10.9

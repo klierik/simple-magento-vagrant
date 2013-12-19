@@ -55,6 +55,7 @@ export DEBIAN_FRONTEND=noninteractive
 # Install MySQL quietly
 apt-get -q -y install mysql-server-5.5
 
+mysql -u root -e "DROP DATABASE IF EXISTS magentodb"
 mysql -u root -e "CREATE DATABASE IF NOT EXISTS magentodb"
 mysql -u root -e "GRANT ALL PRIVILEGES ON magentodb.* TO 'magentouser'@'localhost' IDENTIFIED BY 'password'"
 mysql -u root -e "FLUSH PRIVILEGES"

@@ -72,7 +72,7 @@ Open Vagrantvile and find `config.vm.network :forwarded_port, guest: 80, host: 8
 
 __Change Synced folder__
 
-I prefere use different folders for vagrant and project. For example:
+I prefer use different folders for vagrant and project. For example:
 
 ```
 .

@@ -1,5 +1,5 @@
 # What is that? #
-Simple-Magento-Vagrant -- ultra light Vagrant box for running Magento CMS, based on Ubuntu Precise 64.  
+Simple-Magento-Vagrant -- ultra light Vagrant development environment for running Magento CMS, based on Ubuntu Precise 64.  
 I create this repo for my self as easyest way install Magento and share with you.
 
 After installation you will get clean Magento 1.8.1.0 with sample data 1.6.1.0.  

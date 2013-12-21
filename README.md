@@ -83,8 +83,9 @@ vagrant                   - vagrant folder
 That\`s why i sync my folders in this way `config.vm.synced_folder "../magento-project-folder/", "/vagrant/httpdocs"`.  
 Change `../magento-project-folder/` path to folder with your project (it\` can be relative or absolute url).
 
-__Run Vagrant__
-
+## How to run? ##
+Download [latest Simple-Magento-Vagrant](https://github.com/klierik/simple-magento-vagrant/archive/master.zip) zip archive (and unpack it) or run '$ git clone git@github.com:klierik/simple-magento-vagrant.git' in your test folder.  
+Then go to vagrant folder. For example '$ cd /Volumes/Data/http/htdocs/simple-magento-vagrant/vagrant/'  
 Run `$ vagrant up` in your vagrant options.
 
 __PS: via installation you can be asked for password__

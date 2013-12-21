@@ -5,7 +5,7 @@ I create this repo for my self as easyest way install Magento and share with you
 After installation you will get clean Magento 1.8.1.0 with sample data 1.6.1.0.  
 You can re-configure for personal use in you development. See __[How to use and/or customize](https://github.com/klierik/simple-magento-vagrant/blob/master/README.md#how-to-use-andor-customize)__ section for more information.
 
-# What do i have? #
+# What do you get? #
 + Ubuntu 12.04 + Apache2 + Php5 + MySQL 5.5.x
 + Magento 1.8.1.0 with sample data 1.6.1.0
 + [Adminer 3.7.1](http://www.adminer.org/)(formerly phpMinAdmin)

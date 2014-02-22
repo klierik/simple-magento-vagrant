@@ -4,6 +4,7 @@
 # --------------------
 apt-get update
 
+
 # Install Apache & PHP
 # --------------------
 apt-get install -y apache2

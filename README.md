@@ -1,14 +1,27 @@
 # What is that? #
-Simple-Magento-Vagrant -- ultra light Vagrant box for running Magento CMS from box, based on Ubuntu precise 64.  
+Simple-Magento-Vagrant -- ultra light Vagrant development environment for running Magento CMS, based on Ubuntu Precise 64.  
 I create this repo for my self as easyest way install Magento and share with you.
 
 After installation you will get clean Magento 1.8.1.0 with sample data 1.6.1.0.  
 You can re-configure for personal use in you development. See __[How to use and/or customize](https://github.com/klierik/simple-magento-vagrant/blob/master/README.md#how-to-use-andor-customize)__ section for more information.
 
+# What do you get? #
++ Ubuntu 12.04 + Apache2 + Php5 + MySQL 5.5.x
++ Magento 1.8.1.0 with sample data 1.6.1.0
++ [Adminer 3.7.1](http://www.adminer.org/)(formerly phpMinAdmin)
+
+__Folders structure:__
+```
+.
+..
+magento-project-folder    - my project folder
+vagrant                   - vagrant folder
+```
+
 ## Requirements: ##
++ [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 + [Vagrant](http://www.vagrantup.com/downloads.html)
 + [Vagrant Host Manager](https://github.com/smdahlen/vagrant-hostmanager)
-+ [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 
 ## Default configuration ##
 
@@ -26,7 +39,7 @@ __VirtualBox settings:__
 Memory by default: `vb.customize ["modifyvm", :id, "--memory", "512"]`  
 Network host-guest configuration: `config.vm.network :forwarded_port, guest: 80, host: 8999`
 
-## Magento configuration ##
+## Magento info and options ##
 Magento version include: __1.8.1.0__  
 Magento sample data include: __1.6.1.0__
 
@@ -39,6 +52,8 @@ DB user password: __password__
 Server name: __simple-magento-vagrant.dev__
 
 ## How to use and/or customize. ##
+It will be work out of box but you can edit configuration if you need.
+
 __Change domain name__
 
 1. Open Vagrantfile and use find/replace tool to change  
@@ -57,7 +72,7 @@ Open Vagrantvile and find `config.vm.network :forwarded_port, guest: 80, host: 8
 
 __Change Synced folder__
 
-I prefere use different folders for vagrant and progect. For example:
+I prefer use different folders for vagrant and project. For example:
 
 ```
 .
@@ -68,12 +83,13 @@ vagrant                   - vagrant folder
 That\`s why i sync my folders in this way `config.vm.synced_folder "../magento-project-folder/", "/vagrant/httpdocs"`.  
 Change `../magento-project-folder/` path to folder with your project (it\` can be relative or absolute url).
 
-__Run Vagrant__
-
+## How to run? ##
+Download [latest Simple-Magento-Vagrant](https://github.com/klierik/simple-magento-vagrant/archive/master.zip) zip archive (and unpack it) or run '$ git clone git@github.com:klierik/simple-magento-vagrant.git' in your test folder.  
+Then go to vagrant folder. For example '$ cd /Volumes/Data/http/htdocs/simple-magento-vagrant/vagrant/'  
 Run `$ vagrant up` in your vagrant options.
 
 __PS: via installation you can be asked for password__
 
-Now open http://simple-magento-vagrant.dev/ in your browser and install magento.
+After installation is finished open http://simple-magento-vagrant.dev/ in your browser and install Magento.
 
 Tested on Mac Os X 10.9

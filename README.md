@@ -1,8 +1,8 @@
 # What is that? #
-Simple-Magento-Vagrant -- ultra light Vagrant development environment for running Magento CMS, based on Ubuntu Precise 64.  
+Simple-Magento-Vagrant -- ultra light Vagrant development environment for running Magento CMS, based on Ubuntu Precise 64.
 I create this repo for my self as easyest way install Magento and share with you.
 
-After installation you will get clean Magento 1.8.1.0 with sample data 1.6.1.0.  
+After installation you will get clean Magento 1.8.1.0 with sample data 1.6.1.0.
 You can re-configure for personal use in you development. See __[How to use and/or customize](https://github.com/klierik/simple-magento-vagrant/blob/master/README.md#how-to-use-andor-customize)__ section for more information.
 
 # What do you get? #
@@ -36,16 +36,16 @@ config.nfs.map_gid = 0
 
 __VirtualBox settings:__
 
-Memory by default: `vb.customize ["modifyvm", :id, "--memory", "512"]`  
+Memory adn CPU cores by default: 1/8 of all memory and all cores (for Windows user 2 cores and 1024 memory)
 Network host-guest configuration: `config.vm.network :forwarded_port, guest: 80, host: 8999`
 
 ## Magento info and options ##
-Magento version include: __1.8.1.0__  
+Magento version include: __1.8.1.0__
 Magento sample data include: __1.6.1.0__
 
-DB name: __magentodb__  
-DB user name: __magentouser__  
-DB user password: __password__  
+DB name: __magentodb__
+DB user name: __magentouser__
+DB user password: __password__
 
 ## Web server configuration ##
 
@@ -56,10 +56,10 @@ It will be work out of box but you can edit configuration if you need.
 
 __Change domain name__
 
-1. Open Vagrantfile and use find/replace tool to change  
+1. Open Vagrantfile and use find/replace tool to change
 `"simple-magento-vagrant"` ==> `"my-personal-magento-site-name"` or what you need
 
-2. Open bootstrap.sh and use find/replace tool to change  
+2. Open bootstrap.sh and use find/replace tool to change
 `"simple-magento-vagrant"` ==> `"my-personal-magento-site-name"` or what you need
 
 __Change network private ip__
@@ -80,12 +80,12 @@ I prefer use different folders for vagrant and project. For example:
 magento-project-folder    - my project folder
 vagrant                   - vagrant folder
 ```
-That\`s why i sync my folders in this way `config.vm.synced_folder "../magento-project-folder/", "/vagrant/httpdocs"`.  
+That\`s why i sync my folders in this way `config.vm.synced_folder "../magento-project-folder/", "/vagrant/httpdocs"`.
 Change `../magento-project-folder/` path to folder with your project (it\` can be relative or absolute url).
 
 ## How to run? ##
-Download [latest Simple-Magento-Vagrant](https://github.com/klierik/simple-magento-vagrant/archive/master.zip) zip archive (and unpack it) or run '$ git clone git@github.com:klierik/simple-magento-vagrant.git' in your test folder.  
-Then go to vagrant folder. For example '$ cd /Volumes/Data/http/htdocs/simple-magento-vagrant/vagrant/'  
+Download [latest Simple-Magento-Vagrant](https://github.com/klierik/simple-magento-vagrant/archive/master.zip) zip archive (and unpack it) or run '$ git clone git@github.com:klierik/simple-magento-vagrant.git' in your test folder.
+Then go to vagrant folder. For example '$ cd /Volumes/Data/http/htdocs/simple-magento-vagrant/vagrant/'
 Run `$ vagrant up` in your vagrant options.
 
 __PS: via installation you can be asked for password__

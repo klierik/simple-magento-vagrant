@@ -14,7 +14,7 @@ __Folders structure:__
 ```
 .
 ..
-magento-project-folder    - my project folder
+magento    - my project folder
 vagrant                   - vagrant folder
 ```
 
@@ -36,15 +36,15 @@ config.nfs.map_gid = 0
 
 __VirtualBox settings:__
 
-Memory adn CPU cores by default: 1/8 of all memory and all cores (for Windows user 2 cores and 1024 memory)  
+Memory adn CPU cores by default: 1/8 of all memory and all cores (for Windows user 2 cores and 1024 memory)
 Network host-guest configuration: `config.vm.network :forwarded_port, guest: 80, host: 8999`
 
 ## Magento info and options ##
-Magento version include: __1.8.1.0__  
+Magento version include: __1.8.1.0__
 Magento sample data include: __1.6.1.0__
 
-DB name: __magentodb__  
-DB user name: __magentouser__  
+DB name: __magentodb__
+DB user name: __magentouser__
 DB user password: __password__
 
 ## Web server configuration ##
@@ -77,11 +77,11 @@ I prefer use different folders for vagrant and project. For example:
 ```
 .
 ..
-magento-project-folder    - my project folder
-vagrant                   - vagrant folder
+magento    - magento project folder
+vagrant    - vagrant folder
 ```
-That\`s why i sync my folders in this way `config.vm.synced_folder "../magento-project-folder/", "/vagrant/httpdocs"`.
-Change `../magento-project-folder/` path to folder with your project (it\` can be relative or absolute url).
+That\`s why i sync my folders in this way `config.vm.synced_folder "../magento/", "/vagrant/httpdocs"`.
+Change `../magento/` path to folder with your project (it\` can be relative or absolute url).
 
 ## How to run? ##
 Download [latest Simple-Magento-Vagrant](https://github.com/klierik/simple-magento-vagrant/archive/master.zip) zip archive (and unpack it) or run '$ git clone git@github.com:klierik/simple-magento-vagrant.git' in your test folder.

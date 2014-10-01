@@ -56,7 +56,7 @@ if [ ! -d "/vagrant/httpdocs/adminer" ]; then
   mkdir /vagrant/httpdocs/adminer
   wget -O /vagrant/httpdocs/adminer/index.php http://downloads.sourceforge.net/adminer/adminer-4.0.3.php
 
-  echo "Adminer installed... Use http://you-site-domain-name.com/adminer URL to use it."
+  echo "Adminer installed... Use http://simple-magento-vagrant.dev/adminer/ URL to use it."
 fi
 
 

@@ -82,7 +82,7 @@ mysql -u root -e "FLUSH PRIVILEGES"
 # --------------------
 if [ -f "/vagrant/source/magento-1.8.1.0.tar.bz2" ]; then
   echo "/vagrant/source/magento-1.8.1.0.tar.bz2 found. Start copy..."
-  tar xvf /vagrant/source/magento-1.8.1.0.tar.bz2 -C /vagrant/httpdocs/
+  tar xvf /vagrant/source/magento-1.8.1.0.tar.bz2 -C /vagrant/httpdocs/ --exclude='._*'
 
   echo "moving files to /vagrant/httpdocs folder..."
   mv /vagrant/httpdocs/magento/{*,.*} /vagrant/httpdocs
@@ -120,7 +120,7 @@ fi
 # --------------------
 if [ -f "/vagrant/source/media_magento_sample_data_for_1.6.1.0.tar.gz" ]; then
   echo "/vagrant/source/media_magento_sample_data_for_1.6.1.0.tar.gz found. Start copy..."
-  tar xvzf /vagrant/source/media_magento_sample_data_for_1.6.1.0.tar.gz -C /vagrant/httpdocs/
+  tar xvzf /vagrant/source/media_magento_sample_data_for_1.6.1.0.tar.gz -C /vagrant/httpdocs/ --exclude='._*'
   echo "Done."
 else
   echo "/vagrant/source/media_magento_sample_data_for_1.6.1.0.tar.gz not found."

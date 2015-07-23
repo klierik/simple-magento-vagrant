@@ -42,7 +42,7 @@ VHOST=$(cat <<EOF
 EOF
 )
 
-echo "$VHOST" > /etc/apache2/sites-enabled/000-default
+echo "$VHOST" > /etc/apache2/sites-enabled/000-default.conf
 
 a2enmod rewrite
 service apache2 restart

@@ -27,3 +27,4 @@ Icon
 # Magento project
 # --------------------
 magento/*
+!magento/.keep

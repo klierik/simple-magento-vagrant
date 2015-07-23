@@ -1,3 +1,6 @@
+# Magento2 Vagrant environment
+If you interesting about Magento2 Vagrant environment you can find it [here](https://github.com/klierik/magento2-vagrant) 
+
 # What is that? #
 Simple-Magento-Vagrant -- ultra light Vagrant development environment for running Magento CMS, based on Ubuntu Precise 64.
 I create this repo for my self as easyest way install Magento and share with you.
@@ -6,22 +9,25 @@ After installation you will get clean Magento 1.8.1.0 with sample data 1.6.1.0.
 You can re-configure for personal use in you development. See __[How to use and/or customize](https://github.com/klierik/simple-magento-vagrant/blob/master/README.md#how-to-use-andor-customize)__ section for more information.
 
 # What do you get? #
-+ Ubuntu 12.04 + Apache2 + Php5 + MySQL 5.5.x
-+ Magento 1.8.1.0 with sample data 1.6.1.0
++ Ubuntu 14.04 + Apache2 + Php5 + MySQL 5.5.x
++ Magento 1.9.1.0 with sample data 1.9.1.0
 + [Adminer 3.7.1](http://www.adminer.org/)(formerly phpMinAdmin)
 
 __Folders structure:__
 ```
+$ tree -L 2
 .
-..
-magento    - my project folder
-vagrant                   - vagrant folder
+├── README.md
+├── magento
+└── vagrant
+    ├── Vagrantfile 
+    └── bootstrap.sh
 ```
 
 ## Requirements: ##
 + [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 + [Vagrant](http://www.vagrantup.com/downloads.html)
-+ [Vagrant Host Manager](https://github.com/smdahlen/vagrant-hostmanager)
++ [Vagrant Host Manager](https://github.com/smdahlen/vagrant-hostmanager) and [vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest)
 
 ## Default configuration ##
 
@@ -40,11 +46,8 @@ Memory adn CPU cores by default: 1/8 of all memory and all cores (for Windows us
 Network host-guest configuration: `config.vm.network :forwarded_port, guest: 80, host: 8999`
 
 ## Magento info and options ##
-Magento version include: __1.8.1.0__
-Magento sample data include: __1.6.1.0__
-
-DB name: __magentodb__
-DB user name: __magentouser__
+DB name: __magento__
+DB user name: __magento__
 DB user password: __password__
 
 ## Web server configuration ##
@@ -64,7 +67,7 @@ __Change domain name__
 
 __Change network private ip__
 
-Open Vagrant file and find `node.vm.network :private_network, ip: '192.168.68.69'` ==> change ip
+Open Vagrant file and find `node.vm.network :private_network, ip: '192.168.99.99'` ==> change ip
 
 __Change forwarded port__
 
@@ -92,4 +95,4 @@ __PS: via installation you can be asked for password__
 
 After installation is finished open http://simple-magento-vagrant.dev/ in your browser and install Magento.
 
-Tested on Mac Os X 10.9
+Good luck ;)

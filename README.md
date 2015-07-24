@@ -20,6 +20,7 @@ $ tree -L 2
 ├── README.md
 ├── magento
 └── vagrant
+    ├── httpdocs 
     ├── Vagrantfile 
     └── bootstrap.sh
 ```

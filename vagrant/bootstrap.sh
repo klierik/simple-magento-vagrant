@@ -121,20 +121,22 @@ echo "=================================================="
 echo "DOWNLOAD MAGENTO SOURCE AND SAMPLE"
 echo "=================================================="
 echo "Start download Magento 1.9.1.0 and sample data save version..."
-mkdir /vagrant/source
-if [ magento-1.9.1.0.tar.gz does not exist ];
-then
-   wget -c http://www.magentocommerce.com/downloads/assets/1.9.1.0/magento-1.9.1.0.tar.gz
+if [ ! -d /vagrant/source ]; then
+   mkdir /vagrant/source
 fi
-if [ magento-sample-data-1.9.1.0.tar.gz does not exist ];
-then
-   wget -c http://www.magentocommerce.com/downloads/assets/1.9.1.0/magento-sample-data-1.9.1.0.tar.gz
+
+if [ ! -f /vagrant/source/magento-1.9.1.0.tar.gz ]; then
+   wget -c http://www.magentocommerce.com/downloads/assets/1.9.1.0/magento-1.9.1.0.tar.gz -O /vagrant/source/magento-1.9.1.0.tar.gz
+fi
+
+if [ ! -f /vagrant/source/magento-sample-data-1.9.1.0.tar.gz ]; then
+   wget -c http://www.magentocommerce.com/downloads/assets/1.9.1.0/magento-sample-data-1.9.1.0.tar.gz -O /vagrant/source/magento-sample-data-1.9.1.0.tar.gz
 fi
 echo "done."
 
 echo "Extract Magento and sample data to /vagrant/httpdocs ..."
-tar zxvf magento-1.9.1.0.tar.gz -C /vagrant/httpdocs --strip-components=1
-tar zxvf magento-sample-data-1.9.1.0.tar.gz -C /vagrant/httpdocs --strip-components=1
+tar zxvf /vagrant/source/magento-1.9.1.0.tar.gz -C /vagrant/httpdocs --strip-components=1
+tar zxvf /vagrant/source/magento-sample-data-1.9.1.0.tar.gz -C /vagrant/httpdocs --strip-components=1
 echo "done."
 
 echo "Import Sample database..."

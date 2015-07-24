@@ -1,4 +1,4 @@
-# Magento2 Vagrant environment
+# Looking for Magento2 Vagrant environment?
 If you interesting about Magento2 Vagrant environment you can find it [here](https://github.com/klierik/magento2-vagrant) 
 
 # What is that? #

@@ -32,7 +32,7 @@ $ tree -L 2
 
 ## Default configuration ##
 
-__File system:__
+**File system:**
 ```
 nfs: true
 mount_options: ["nolock", "async"]
@@ -41,7 +41,7 @@ config.nfs.map_uid = 0
 config.nfs.map_gid = 0
 ```
 
-__VirtualBox settings:__
+**VirtualBox settings:**
 
 Memory adn CPU cores by default: 1/8 of all memory and all cores (for Windows user 2 cores and 1024 memory)
 Network host-guest configuration:
@@ -72,15 +72,12 @@ It will be work out of box but you can edit configuration if you need.
 `"simple-magento-vagrant"` ==> `"my-personal-magento-site-name"` or what you need
 
 ### Change network private ip
-
 Open Vagrant file and find `node.vm.network :private_network, ip: '192.168.99.99'` ==> change ip
 
 ### Change forwarded port
-
 Open Vagrantvile and find `config.vm.network :forwarded_port, guest: 80, host: 8999` ==> change host port
 
 ### Change Synced folder
-
 I prefer use different folders for vagrant and project. For example:
 
 ```

@@ -25,9 +25,10 @@ Vagrant.configure("2") do |config|
 
     # Synced folder
     # config.vm.synced_folder "../magento/", "/vagrant/httpdocs"
-    config.vm.synced_folder "../magento/", "/vagrant/httpdocs", nfs: true, mount_options: ["nolock", "async"], bsd__nfs_options: ["alldirs","async","nolock"]
-    config.nfs.map_uid = 0
-    config.nfs.map_gid = 0
+    #config.vm.synced_folder "../magento/", "/vagrant/httpdocs", nfs: true, mount_options: ["nolock", "async"], bsd__nfs_options: ["alldirs","async","nolock"]
+    config.vm.synced_folder "./httpdocs/", "/vagrant/httpdocs", mount_options: ["dmode=775,fmode=664"], group: 'www-data', owner: "vagrant"
+    #config.nfs.map_uid = 0
+    #config.nfs.map_gid = 0
 
 
     # VirtualBox settings

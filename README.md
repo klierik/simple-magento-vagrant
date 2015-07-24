@@ -51,18 +51,19 @@ config.vm.network :forwarded_port, guest: 22, host: 2299
 ```
 
 ## Magento info and options ##
-DB name: __magento__
-DB user name: __magento__
-DB user password: __password__
+DB name: **magento**
+
+DB user name: **magento**
+
+DB user password: **password**
 
 ## Web server configuration ##
-
-Server name: __simple-magento-vagrant.dev__
+Server name: **simple-magento-vagrant.dev**
 
 ## How to use and/or customize. ##
 It will be work out of box but you can edit configuration if you need.
 
-__Change domain name__
+### Change domain name
 
 1. Open Vagrantfile and use find/replace tool to change
 `"simple-magento-vagrant"` ==> `"my-personal-magento-site-name"` or what you need
@@ -70,15 +71,15 @@ __Change domain name__
 2. Open bootstrap.sh and use find/replace tool to change
 `"simple-magento-vagrant"` ==> `"my-personal-magento-site-name"` or what you need
 
-__Change network private ip__
+### Change network private ip
 
 Open Vagrant file and find `node.vm.network :private_network, ip: '192.168.99.99'` ==> change ip
 
-__Change forwarded port__
+### Change forwarded port
 
 Open Vagrantvile and find `config.vm.network :forwarded_port, guest: 80, host: 8999` ==> change host port
 
-__Change Synced folder__
+### Change Synced folder
 
 I prefer use different folders for vagrant and project. For example:
 
@@ -88,15 +89,15 @@ I prefer use different folders for vagrant and project. For example:
 magento    - magento project folder
 vagrant    - vagrant folder
 ```
-That\`s why i sync my folders in this way `config.vm.synced_folder "../magento/", "/vagrant/httpdocs"`.
-Change `../magento/` path to folder with your project (it\` can be relative or absolute url).
+That's why i sync my folders in this way `config.vm.synced_folder "../magento/", "/vagrant/httpdocs"`.
+Change `../magento/` path to folder with your project (it can be relative or absolute url).
 
 ## How to run? ##
 Download [latest Simple-Magento-Vagrant](https://github.com/klierik/simple-magento-vagrant/archive/master.zip) zip archive (and unpack it) or run '$ git clone git@github.com:klierik/simple-magento-vagrant.git' in your test folder.
 Then go to vagrant folder. For example '$ cd /Volumes/Data/http/htdocs/simple-magento-vagrant/vagrant/'
 Run `$ vagrant up` in your vagrant options.
 
-__PS: via installation you can be asked for password__
+**PS: via installation you can be asked for password**
 
 After installation is finished open http://simple-magento-vagrant.dev/ in your browser and install Magento.
 

@@ -44,7 +44,11 @@ config.nfs.map_gid = 0
 __VirtualBox settings:__
 
 Memory adn CPU cores by default: 1/8 of all memory and all cores (for Windows user 2 cores and 1024 memory)
-Network host-guest configuration: `config.vm.network :forwarded_port, guest: 80, host: 8999`
+Network host-guest configuration:
+```
+config.vm.network :forwarded_port, guest: 80, host: 8999
+config.vm.network :forwarded_port, guest: 22, host: 2299
+```
 
 ## Magento info and options ##
 DB name: __magento__

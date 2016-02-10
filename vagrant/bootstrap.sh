@@ -4,7 +4,7 @@
 echo "=================================================="
 echo "Aloha! Now we will try to Install Ubuntu 14.04 LTS"
 echo "with Apache 2.4, PHP 5.6, MySQL 5.6(manual)"
-echo "and others dependencies needed for Magento 2."
+echo "and others dependencies needed for Magento 1(2)."
 echo "Good luck :P"
 echo "=================================================="
 echo ""
@@ -120,22 +120,22 @@ apt-get -y autoclean
 echo "=================================================="
 echo "DOWNLOAD MAGENTO SOURCE AND SAMPLE"
 echo "=================================================="
-echo "Start download Magento 1.9.1.0 and sample data save version..."
+echo "Start download Magento 1.9.2.3 and sample data save version..."
 if [ ! -d /vagrant/source ]; then
    mkdir /vagrant/source
 fi
 
-if [ ! -f /vagrant/source/magento-1.9.1.0.tar.gz ]; then
-   wget -c http://www.magentocommerce.com/downloads/assets/1.9.1.0/magento-1.9.1.0.tar.gz -O /vagrant/source/magento-1.9.1.0.tar.gz
+if [ ! -f /vagrant/source/magento-1.9.2.3.tar.gz ]; then
+   wget -c https://github.com/OpenMage/magento-mirror/archive/1.9.2.3.tar.gz -O /vagrant/source/magento-1.9.2.3.tar.gz
 fi
 
 if [ ! -f /vagrant/source/magento-sample-data-1.9.1.0.tar.gz ]; then
-   wget -c http://www.magentocommerce.com/downloads/assets/1.9.1.0/magento-sample-data-1.9.1.0.tar.gz -O /vagrant/source/magento-sample-data-1.9.1.0.tar.gz
+   wget -c http://mirror.gunah.eu/magento/sample-data/magento-sample-data-1.9.1.0.tar.gz -O /vagrant/source/magento-sample-data-1.9.1.0.tar.gz
 fi
 echo "done."
 
 echo "Extract Magento and sample data to /vagrant/httpdocs ..."
-tar zxvf /vagrant/source/magento-1.9.1.0.tar.gz -C /vagrant/httpdocs --strip-components=1
+tar zxvf /vagrant/source/magento-1.9.2.3.tar.gz -C /vagrant/httpdocs --strip-components=1
 tar zxvf /vagrant/source/magento-sample-data-1.9.1.0.tar.gz -C /vagrant/httpdocs --strip-components=1
 echo "done."
 

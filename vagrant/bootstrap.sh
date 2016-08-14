@@ -89,7 +89,7 @@ if [ ! -d "/vagrant/httpdocs/adminer" ]; then
   echo "Adminer not found at /vagrant/httpdocs/adminer and will be installed..."
 
   mkdir /vagrant/httpdocs/adminer
-  wget -O /vagrant/httpdocs/adminer/index.php http://downloads.sourceforge.net/adminer/adminer-4.0.3.php
+  wget -O /vagrant/httpdocs/adminer/index.php https://www.adminer.org/static/download/4.2.5/adminer-4.2.5.php
 
   echo "Adminer installed... Use http://simple-magento-vagrant.dev/adminer/ URL to use it."
 fi
@@ -146,7 +146,7 @@ echo "done."
 echo "Update DB config with local domain name..."
 mysql -u root -e "UPDATE magento.core_config_data SET value = 'http://simple-magento-vagrant.dev/' WHERE core_config_data.path = 'web/unsecure/base_url'"
 mysql -u root -e "UPDATE magento.core_config_data SET value = 'http://simple-magento-vagrant.dev/' WHERE core_config_data.path = 'web/secure/base_url'"
-echo "done."
+echo "done."a
 
 
 echo "=================================================="

@@ -130,7 +130,7 @@ if [ ! -f /vagrant/source/magento-1.9.2.3.tar.gz ]; then
 fi
 
 if [ ! -f /vagrant/source/magento-sample-data-1.9.1.0.tar.gz ]; then
-   wget -c http://mirror.gunah.eu/magento/sample-data/magento-sample-data-1.9.1.0.tar.gz -O /vagrant/source/magento-sample-data-1.9.1.0.tar.gz
+   wget -c https://raw.githubusercontent.com/Vinai/compressed-magento-sample-data/1.9.1.0/compressed-no-mp3-magento-sample-data-1.9.1.0.tgz -O /vagrant/source/magento-sample-data-1.9.1.0.tar.gz
 fi
 echo "done."
 
